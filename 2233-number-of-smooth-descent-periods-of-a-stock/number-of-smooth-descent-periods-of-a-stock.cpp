@@ -1,7 +1,7 @@
 class Solution {
 public:
     long long getDescentPeriods(vector<int>& prices) {
-        long long count=0,cnt=prices.size();
+       long long count=0,cnt=prices.size();
         int first=0,second=0;
         while(second+1<prices.size()){
             bool b=0;
@@ -14,7 +14,7 @@ public:
             }
             
   if (b){
-     long long  l= second-first+1;
+   long long l= second-first+1;
       cnt-=l;
   count+=(l*(l+1)/2);
   }
