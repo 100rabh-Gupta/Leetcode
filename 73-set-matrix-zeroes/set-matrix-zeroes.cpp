@@ -4,30 +4,44 @@ public:
         
 
        int row =matrix.size(),col=matrix[0].size();
-       vector<vector<int>> matri(row,vector<int>(col,-1));
+       unordered_set<int>indexr;
+        unordered_set<int>indexc;
+
         for ( int i=0; i<row;i++){
             for ( int j=0;j<col;j++){
                 if ( matrix[i][j]==0){
-                   for ( int l=0;l<row;l++){
-                    matri[l][j]=0;
-                   }
-                   for ( int k=0;k<col;k++){
-                    matri[i][k]=0;
-                   }
+                  indexr.insert(i);
+                  indexc.insert(j);
+                  
 
 
                 }
             }
         }
-       for ( int i=0; i<row;i++){
+       for ( int i:indexr){
+
             for ( int j=0;j<col;j++){
-            if ( matri[i][j]!=0){
-                matri[i][j]=matrix[i][j];
-}
-            }
+                matrix[i][j]=0;
+
 
             }
-            matrix=matri;
-            matri.clear(); 
+       }
+
+
+
+        for ( int i:indexc){
+
+            for ( int j=0;j<row;j++){
+                matrix[j][i]=0;
+
+
+            }
+       }
+
+          
+
+            
+
+           
     }
 };
