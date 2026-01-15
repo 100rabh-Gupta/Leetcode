@@ -18,7 +18,9 @@ public:
             }
             ind++;
         }
-        return ans;
+        nums=ans;
+        ans.clear();
+        return nums;
         
     }
 };
